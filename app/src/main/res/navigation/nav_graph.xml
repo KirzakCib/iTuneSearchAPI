@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/albumListFragment">
+
+    <fragment
+        android:id="@+id/albumListFragment"
+        android:name="com.example.itunesearchapi.retrofit.ui.AlbumListFragment"
+        tools:layout="@layout/fragment_album"
+        android:label="AlbumListFragment" >
+        <action
+            android:id="@+id/action_albumListFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:popUpTo="@id/albumListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        tools:layout="@layout/fragment_details_album"
+        android:name="com.example.itunesearchapi.retrofit.ui.DetailsAlbumFragment"
+        android:label="DetailsFragment" >
+        <argument
+            android:name="collectionId"
+            app:argType="string" />
+        <argument
+            android:name="artworkUrl100"
+            app:argType="string" />
+        <argument
+            android:name="song"
+            app:argType="string" />
+        <argument
+            android:name="artistName"
+            app:argType="string" />
+        <argument
+            android:name="collectionName"
+            app:argType="string" />
+    </fragment>
+</navigation>
